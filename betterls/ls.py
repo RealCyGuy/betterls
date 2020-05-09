@@ -4,12 +4,17 @@ import json
 import re
 import difflib
 import click
+import colorama
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option("--no-colour", "-nc", is_flag=True, help="Disable colours.")
-def bls(no_colour):
+@click.option("--no-ansi", "-na", is_flag=True, help="Make colours work on non-ansi supported terminals, but not underlines.")
+def bls(no_colour, no_ansi):
+    if no_ansi:
+        colorama.init()
+
     with open(
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "filenames.json")
     ) as file:

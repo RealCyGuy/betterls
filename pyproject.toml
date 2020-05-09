@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "betterls"
-version = "1.1.0"
+version = "1.2.0"
 description = "Better ls command."
 authors = ["Cyrus Yip <cyruscmyip1@gmail.com>"]
 license = "MIT"
@@ -8,6 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 click = "^7.1.2"
+colorama = "^0.4.3"
 
 [tool.poetry.dev-dependencies]
 
