@@ -1,6 +1,6 @@
 # BetterLS
 
-*A better ls command then windows `dir`. Not sure about linux though. :|*
+*A better ls command than windows `dir`. Not sure about linux though. :|*
 
 Look how cool:
 ![bls](https://i.imgur.com/5EzMyjX.png)
