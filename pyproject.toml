@@ -4,6 +4,9 @@ version = "1.2.0"
 description = "Better ls command."
 authors = ["Cyrus Yip <cyruscmyip1@gmail.com>"]
 license = "MIT"
+readme = README.md
+repository = "https://github.com/RealCyGuy/betterls"
+keywords = ["ls", "cli", "windows"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
