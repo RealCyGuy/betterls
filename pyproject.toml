@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "betterls"
-version = "1.2.0"
+version = "1.2.1"
 description = "Better ls command."
 authors = ["Cyrus Yip <cyruscmyip1@gmail.com>"]
 license = "MIT"
-readme = README.md
+readme = "README.md"
 repository = "https://github.com/RealCyGuy/betterls"
 keywords = ["ls", "cli", "windows"]
 
