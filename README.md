@@ -2,8 +2,8 @@
 
 *A better ls command than windows `dir`. Not sure about linux though. :|*
 
-![PyPI](https://img.shields.io/pypi/v/betterls?label=latest%20version&style=for-the-badge)
-![PyPI - Downloads](https://img.shields.io/pypi/dd/betterls?style=for-the-badge)
+[![PyPI](https://img.shields.io/pypi/v/betterls?label=latest%20version&style=for-the-badge)](https://pypi.org/project/betterls/#history)
+[![PyPI - Downloads](https://img.shields.io/pypi/dd/betterls?style=for-the-badge)](https://pypi.org/project/betterls)
 [![GitHub license](https://img.shields.io/github/license/realcyguy/betterls?style=for-the-badge)](https://github.com/RealCyGuy/betterls/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/realcyguy/betterls?style=for-the-badge)](https://github.com/realcyguy/betterls/issues)
 
@@ -12,7 +12,7 @@ Look how cool:
 
 ## Installation
 
-Use PIP:
+Use [PIP](https://pypi.org/project/betterls/):
 
 ```bash
 $ pip install --upgrade betterls
