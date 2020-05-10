@@ -21,3 +21,6 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry.scripts]
 bls = 'betterls.ls:bls'
+
+[tool.poetry.urls]
+"Issues" = "https://github.com/realcyguy/betterls/issues"
