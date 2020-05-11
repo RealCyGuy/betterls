@@ -10,8 +10,9 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option("--no-colour", "-nc", is_flag=True, help="Disable colours.")
+@click.option("--heat-map", "-hm", is_flag=True, help="Heat map based on file size.")
 @click.option("--no-ansi", "-na", is_flag=True, help="Make colours work on non-ansi supported terminals, but not underlines.")
-def bls(no_colour, no_ansi):
+def bls(no_colour, heat_map, no_ansi):
     if no_ansi:
         colorama.init()
 
@@ -26,27 +27,37 @@ def bls(no_colour, no_ansi):
         for entry in it:
             name = entry.name
             if not no_colour:
-                if entry.is_dir():
-                    name = "\033[92m\033[4m" + name + "\033[0m"
-                elif name.lower().startswith("readme") or name in filesnames["immediate"]:
-                    name = "\033[1;33m" + name + "\033[0m"
-                elif name.endswith(tuple(filesnames["image"])):
-                    name = "\033[0;35m" + name + "\033[0m"
-                elif name.endswith(tuple(filesnames["video"])):
-                    name = "\033[0;36m" + name + "\033[0m"
-                elif name.endswith(tuple(filesnames["music"])):
-                    name = "\033[0;34m" + name + "\033[0m"
-                elif name.endswith(tuple(filesnames["document"])):
-                    name = "\033[1;34m" + name + "\033[0m"
-                elif name.endswith(tuple(filesnames["compressed"])):
-                    name = "\033[1;35m\033[4m" + name + "\033[0m"
+                if heat_map:
+                    if entry.is_dir():
+                        name = "\033[1;36m\033[4m" + name + "\033[0m"
+                    elif entry.stat().st_size > 1000000000: # 1 gigabyte
+                        name = "\033[0;31m" + name + "\033[0m"
+                    elif entry.stat().st_size > 1000000: # 1 megabyte
+                        name = "\033[1;31m" + name + "\033[0m"
+                    elif entry.stat().st_size > 1000: # 1 kilobyte
+                        name = "\033[1;33m" + name + "\033[0m"
+                else:
+                    if entry.is_dir():
+                        name = "\033[92m\033[4m" + name + "\033[0m"
+                    elif name.lower().startswith("readme") or name in filesnames["immediate"]:
+                        name = "\033[1;33m" + name + "\033[0m"
+                    elif name.endswith(tuple(filesnames["image"])):
+                        name = "\033[0;35m" + name + "\033[0m"
+                    elif name.endswith(tuple(filesnames["video"])):
+                        name = "\033[0;36m" + name + "\033[0m"
+                    elif name.endswith(tuple(filesnames["music"])):
+                        name = "\033[0;34m" + name + "\033[0m"
+                    elif name.endswith(tuple(filesnames["document"])):
+                        name = "\033[1;34m" + name + "\033[0m"
+                    elif name.endswith(tuple(filesnames["compressed"])):
+                        name = "\033[1;35m\033[4m" + name + "\033[0m"
                 replacelist.append([entry.name, name])
             else:
                 if entry.is_dir():
                     replacelist.append([entry.name, "\033[4m" + name + "\033[0m"])
             files.append(entry.name)
 
-    width = os.get_terminal_size().columns // 23 * 23
+    width = os.get_terminal_size().columns
     text = "\n".join(
         textwrap.wrap(
             "\t".join(files),

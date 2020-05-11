@@ -27,6 +27,7 @@ Usage: bls [OPTIONS]
 
 Options:
   -nc, --no-colour  Disable colours.
+  -hm, --heat-map   Heat map based on file size.
   -na, --no-ansi    Make colours work on non-ansi supported terminals, but not
                     underlines.
 
@@ -38,11 +39,9 @@ Options:
 - Auto-columns.
 - Highlight for different file types.
 - List out files.
+- Heat map.
 - A help command.
-- Working on windows.
-- Cool looking.
-- What do people write in `Features`?
-- It has a name.
+- Support for non-ansi terminals.
 
 ## License
 

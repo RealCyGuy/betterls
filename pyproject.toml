@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "betterls"
-version = "1.2.1"
+version = "1.3.0"
 description = "Better ls command."
 authors = ["Cyrus Yip <cyruscmyip1@gmail.com>"]
 license = "MIT"
