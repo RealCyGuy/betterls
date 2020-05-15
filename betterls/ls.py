@@ -57,7 +57,7 @@ def bls(no_colour, heat_map, no_ansi):
                     replacelist.append([entry.name, "\033[4m" + name + "\033[0m"])
             files.append(entry.name)
 
-    width = os.get_terminal_size().columns
+    width = os.get_terminal_size().columns // 23 * 23
     text = "\n".join(
         textwrap.wrap(
             "\t".join(files),
