@@ -2,7 +2,7 @@
 
 *A better ls command than windows `dir`. Not sure about linux though. :|*
 
-[![PyPI](https://img.shields.io/pypi/v/betterls?label=latest%20version&style=for-the-badge)](https://pypi.org/project/betterls/#history)
+[![Version](https://img.shields.io/pypi/v/betterls?label=latest%20version&style=for-the-badge)](https://github.com/RealCyGuy/betterls/releases/latest)
 [![PyPI - Downloads](https://img.shields.io/pypi/dd/betterls?style=for-the-badge)](https://pypi.org/project/betterls)
 [![GitHub license](https://img.shields.io/github/license/realcyguy/betterls?style=for-the-badge)](https://github.com/RealCyGuy/betterls/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/realcyguy/betterls?style=for-the-badge)](https://github.com/realcyguy/betterls/issues)
@@ -42,6 +42,10 @@ Options:
 - Heat map.
 - A help command.
 - Support for non-ansi terminals.
+
+## Changelog
+
+https://github.com/RealCyGuy/betterls/releases/
 
 ## License
 
