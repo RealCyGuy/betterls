@@ -15,7 +15,7 @@ Look how cool:
 Use [PIP](https://pypi.org/project/betterls/):
 
 ```bash
-$ pip install --upgrade betterls
+pip install --upgrade betterls
 ```
 
 ## Usage
